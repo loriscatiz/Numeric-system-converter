@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Convertitore di numeri</title>
+    <title>Numeric system converter</title>
 </head>
 
 <body>
     <div class="wrapper">
         <header>
             <h1 class="title-900">Numeric system converter</h1>
-            <p class="body center-txt">Inserisci un valore in uno dei campi per convertirlo automaticamente nelle altre
-                basi
-                numeriche. I valori binari accettano solo 0 e 1, mentre quelli esadecimali supportano cifre e lettere da
-                A a F. Gli input non validi verranno ignorati.
+            <p class="title-500 center-txt">Enter a number in any field (Decimal, Binary, Octal, or Hexadecimal) to see it
+                automatically converted to the other systems.
+                Use the + and - buttons to easily increase or decrease the value by 1.
+                Click the "i" icon next to a field to learn more about the corresponding numeric system.
             </p>
         </header>
         <div class="form">
@@ -30,10 +30,11 @@
                     <button type="button" class="button plus">+</button>
                 </div>
             </div>
+
             <dialog class="modal" id="modal-decimal">
                 <div>
                     <h2 class="title-700">Decimal (Base 10)</h2>
-                    <p class="body">The decimal system is the most familiar numeric system, as it’s used in everyday
+                    <p class="body">The decimal system is the most familiar numeric system, as it's used in everyday
                         human activities. It is essential for general arithmetic, financial transactions, and
                         measurement systems. Its simplicity and compatibility with the way humans count make it the
                         default choice in most non-technical contexts. From calculating the cost of groceries to
@@ -79,22 +80,13 @@
             </div>
             <dialog class="modal" id="modal-octal">
                 <div>
-                    <h2 class="title-700">I numeri ottali</h2>
-                    <p class="body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel accusamus ullam nobis
-                        sed. Deleniti
-                        ipsum maiores at voluptatem, accusamus non eum hic, porro eaque minima dolorem quod culpa
-                        repudiandae delectus?
-                        Dolore hic commodi vitae quia consequatur nobis culpa odio amet dolorum quod aspernatur fugiat
-                        dolores deserunt quaerat totam alias quam praesentium eveniet, corrupti veritatis accusamus,
-                        possimus ad quidem mollitia! Repellendus.
-                        Adipisci qui nobis, officiis nulla esse fuga! Consequuntur, adipisci fugit aperiam consectetur
-                        dicta eaque suscipit tempore perferendis, aliquam eum ab reiciendis vitae placeat recusandae,
-                        impedit neque aspernatur laudantium dolor soluta?
-                        Assumenda voluptatibus quia, atque maxime fugiat culpa aut id suscipit sapiente nisi impedit
-                        recusandae dolorum repellendus porro quis ullam nam repudiandae, voluptate quos molestias?
-                        Ratione sit quam obcaecati ullam aliquam.
-                        Inventore vero eos aspernatur odit veniam excepturi saepe, debitis sit id magnam nisi ipsam
-                        totam quidem asperiores reprehenderit repellat incidunt error? Soluta, dolorum quibusdam
+                    <h2 class="title-700">Octal (Base 8)</h2>
+                    <p class="body">The octal system, which uses digits 0–7, was historically significant in early
+                        computing as a shorthand for binary, especially for systems that grouped binary digits into
+                        chunks of three. While its use has diminished in modern applications, it is still relevant in
+                        Unix-based operating systems. For instance, octal numbers are used to set file permissions via
+                        the chmod command. A permission code like 777 means the file is fully accessible: 7 for read,
+                        write, and execute permissions for the owner, group, and others, respectively.
                     </p>
                     <button class="button close" id="close-decimal" tabindex="0">x</button>
                 </div>
@@ -112,22 +104,14 @@
             </div>
             <dialog class="modal" id="modal-hexadecimal">
                 <div>
-                    <h2 class="title-700">I numeri esadecimali</h2>
-                    <p class="body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel accusamus ullam nobis
-                        sed. Deleniti
-                        ipsum maiores at voluptatem, accusamus non eum hic, porro eaque minima dolorem quod culpa
-                        repudiandae delectus?
-                        Dolore hic commodi vitae quia consequatur nobis culpa odio amet dolorum quod aspernatur fugiat
-                        dolores deserunt quaerat totam alias quam praesentium eveniet, corrupti veritatis accusamus,
-                        possimus ad quidem mollitia! Repellendus.
-                        Adipisci qui nobis, officiis nulla esse fuga! Consequuntur, adipisci fugit aperiam consectetur
-                        dicta eaque suscipit tempore perferendis, aliquam eum ab reiciendis vitae placeat recusandae,
-                        impedit neque aspernatur laudantium dolor soluta?
-                        Assumenda voluptatibus quia, atque maxime fugiat culpa aut id suscipit sapiente nisi impedit
-                        recusandae dolorum repellendus porro quis ullam nam repudiandae, voluptate quos molestias?
-                        Ratione sit quam obcaecati ullam aliquam.
-                        Inventore vero eos aspernatur odit veniam excepturi saepe, debitis sit id magnam nisi ipsam
-                        totam quidem asperiores reprehenderit repellat incidunt error? Soluta, dolorum quibusdam
+                    <h2 class="title-700">Hexadecimal (Base 16)</h2>
+                    <p class="body">The hexadecimal system uses the digits 0–9 and the letters A–F, making it ideal for
+                        representing large numbers compactly. It is widely used in computing for tasks such as defining
+                        memory addresses, specifying error codes, and encoding binary data in a more human-readable
+                        format. A notable application is the representation of RGB colors in digital systems, where two
+                        hexadecimal digits define the intensity of red, the next two define green, and the last two
+                        define blue. For example, #FF5733 specifies a vivid orange color with maximum red (FF), moderate
+                        green (57), and a low level of blue (33).
                     </p>
                     <button class="button close" id="close-decimal" tabindex="0">x</button>
                 </div>

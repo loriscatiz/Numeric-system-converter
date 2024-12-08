@@ -1,276 +1,294 @@
 * {
-    margin: 0;
-    font-family: sans-serif;
-    box-sizing: border-box;
-    max-width: 100%;
+  margin: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 :root {
-    --light: #DAE1ED;
-    --dark: #0F1C33;
-    --main: #1162EE;
-    --secondary: #EE11E7;
-    --transition-duration: .5s;
+  --light: #DAE1ED;
+  --dark: #0F1C33;
+  --main: #1162EE;
+  --secondary: #EE11E7;
+  --backdrop: rgba(15, 28, 51, .75);
+  --transition-duration: .5s;
 }
 
 
 
 @property --gradient-angle {
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }
 
 @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes fade-out {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-  
-  @keyframes slide-up {
-    0% {
-      transform: translateY(100%);
-    }
-    100% {
-      transform: translateY(0%);
-    }
+  0% {
+    opacity: 0;
   }
 
-  @keyframes slide-down {
-    0% {
-      transform: translateY(0%);
-    }
-    100% {
-      transform: translateY(100%);
-    }
+  100% {
+    opacity: 1;
   }
-  
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
 
 
 body {
-    background-color: var(--light);
-    padding-block-end: 3rem;
+  background-color: var(--light);
+  padding-block-end: 3rem;
 }
 
 .title-900 {
-    margin-block-start: .5em;
-    font-size: 3rem;
-    font-weight: bold;
-    text-align: center;
-    color: var(--dark);
+  margin-block-start: .5em;
+  font-size: clamp(2rem, 1.4286rem + 2.2857vw, 3rem);
+  font-weight: bold;
+  text-align: center;
+  color: var(--dark);
 }
-.title-700{
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--dark);
+
+.title-700 {
+  font-size: clamp(1.5rem, 1.2143rem + 1.1429vw, 2rem);
+  font-weight: bold;
+  color: var(--dark);
+}
+
+.title-500 {
+  font-size: clamp(1.125rem, 1.0536rem + 0.2857vw, 1.25rem);
+  margin-block-start: 1em;
+  text-wrap: balance;
+  color: var(--dark);
 }
 
 .body {
-    font-size: 1.15rem;
-    margin-block-start: 1em;
-    text-wrap: balance;
-    color: var(--dark);
+  color: var(--dark);
+  font-size: clamp(1rem, 0.9286rem + 0.2857vw, 1.125rem);
+  margin-block-start: 1em;
 }
-.center-txt{
-    text-align: center;
+
+.center-txt {
+  text-align: center;
 }
 
 .lab-input {
-    letter-spacing: .15ch;
-    text-transform: uppercase;
-    font-size: 1.5rem;
+  letter-spacing: .15ch;
+  text-transform: uppercase;
+  font-size: clamp(1.25rem, 1.1071rem + 0.5714vw, 1.5rem);
 }
 
 .label {
-    color: var(--dark);
+  color: var(--dark);
 }
 
 input {
-    text-align: center;
-    outline: solid 2px var(--main);
-    border: none;
-    border-radius: 90px;
-    padding: .25em .5em;
-    background-color: var(--light);
-    color: var(--dark);
-    transition: all var(--transition-duration);
+  text-align: center;
+  outline: solid 2px var(--main);
+  border: none;
+  border-radius: 90px;
+  padding: .25em .5em;
+  background-color: var(--light);
+  color: var(--dark);
+  transition: all var(--transition-duration);
 }
 
 input:focus {
-    outline: solid 2px var(--secondary);
+  outline: solid 2px var(--secondary);
 }
 
 .wrapper {
-    max-width: 1000px;
-    margin: 0 auto;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .form {
-    margin-block-start: 4rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4rem;
+  margin-block-start: 4rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
 }
 
 .typewrapper {
-    background-color: var(--light);
-    padding: 2rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    position: relative;
-    border-radius: 1rem;
+  background-color: var(--light);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  border-radius: 1rem;
 }
+
 
 .typewrapper::before,
 .typewrapper::after {
-    content: "";
-    position: absolute;
-    inset: -0.5rem;
-    z-index: -1;
-    background: conic-gradient(from var(--gradient-angle),
-            var(--main),
-            var(--secondary), var(--main));
-    border-radius: 1.5rem;
-    animation: rotation 15s linear infinite;
+  content: "";
+  position: absolute;
+  inset: -0.5rem;
+  z-index: -1;
+  background: conic-gradient(from var(--gradient-angle),
+      var(--main),
+      var(--secondary), var(--main));
+  border-radius: 1.5rem;
+  animation: rotation 15s linear infinite;
 }
 
 .typewrapper::after {
-    filter: blur(4rem);
-    opacity: .5;
+  filter: blur(4rem);
+  opacity: .5;
 }
 
 @keyframes rotation {
-    0% {
-        --gradient-angle: 0deg;
-    }
+  0% {
+    --gradient-angle: 0deg;
+  }
 
-    100% {
-        --gradient-angle: 360deg;
-    }
+  100% {
+    --gradient-angle: 360deg;
+  }
 }
 
 .buttons-wrapper {
-    display: flex;
-    gap: 2rem
+  display: flex;
+  gap: 2rem
 }
 
 .button {
-    cursor: pointer;
-    height: 3rem;
-    aspect-ratio: 1;
-    border: solid 2px var(--main);
-    border-radius: 50%;
-    position: relative;
-    background-color: var(--light);
-    transition: all var(--transition-duration);
-    color: var(--main);
+  cursor: pointer;
+  height: 3rem;
+  aspect-ratio: 1;
+  border: solid 2px var(--main);
+  border-radius: 50%;
+  position: relative;
+  background-color: var(--light);
+  transition: all var(--transition-duration);
+  color: var(--main);
+  line-height: 1em;
 
 }
 
 .button:hover,
 .button:focus {
-    background-color: var(--main);
-    outline: none;
-    color: var(--light);
+  background-color: var(--main);
+  outline: none;
+  color: var(--light);
 }
 
 
-.info, .close {
-    position: absolute;
-    font-size: 1.25rem;
-    top: 1rem;
-    right: 1rem;
-    height: 2rem;
-    aspect-ratio: 1;
-    border-radius: 50%;
+.info,
+.close {
+  position: absolute;
+  font-size: 1.25rem;
+  top: 1rem;
+  right: 1rem;
+  height: 2rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
 }
-.modal{
-    max-width: min(80%, 1000px);
-    margin: 2rem auto 0;
 
-    
+.modal {
+  max-width: min(90%, 750px);
+  margin: 2rem auto 0;
+  border: solid .25rem var(--main);
+  border-radius: 1rem;
+
+
 }
 
 .modal::backdrop {
-    background: rgb(0 0 0 / 0.5);
-    opacity: 0;
-    backdrop-filter: blur(4px);
-    animation: fade-in 500ms forwards;
-  }
-  
+  background: var(--backdrop);
+  opacity: 0;
+  backdrop-filter: blur(4px);
+  animation: fade-in 500ms forwards;
+}
+
 
 
 .modal[open] {
-    animation: slide-up 1000ms forwards, fade-in 500ms forwards;
-  }
-.modal[open]::backdrop{
-    opacity: 1;
-}    
-  .modal[closing] {
-    display: block;
-    pointer-events: none;
-    inset: 0;
-    animation: fade-out 500ms forwards, slide-down 500ms forwards;
-  }
-  .modal[closing]::backdrop {
-    animation: fade-out 500ms forwards;
-  }
-  
+  animation: slide-up 1000ms forwards, fade-in 500ms forwards;
+}
+
+.modal[closing] {
+  display: block;
+  pointer-events: none;
+  inset: 0;
+  animation: fade-out 500ms forwards, slide-down 500ms forwards;
+}
+
+.modal[closing]::backdrop {
+  animation: fade-out 500ms forwards;
+}
+
 
 .minus::before,
 .plus::before {
-    content: "";
-    position: absolute;
-    background: var(--main);
-    height: .25rem;
-    width: 2rem;
-    inset: 50% 50%;
-    transform: translate(-50%, -50%);
-    transition: all var(--transition-duration);
+  content: "";
+  position: absolute;
+  background: var(--main);
+  height: .25rem;
+  width: 2rem;
+  inset: 50% 50%;
+  transform: translate(-50%, -50%);
+  transition: all var(--transition-duration);
 }
 
 .plus::after {
-    content: "";
-    position: absolute;
-    background: var(--main);
-    height: 2rem;
-    width: .25rem;
-    inset: 50% 50%;
-    transform: translate(-50%, -50%);
-    transition: all var(--transition-duration);
+  content: "";
+  position: absolute;
+  background: var(--main);
+  height: 2rem;
+  width: .25rem;
+  inset: 50% 50%;
+  transform: translate(-50%, -50%);
+  transition: all var(--transition-duration);
 }
 
 .button:hover::before,
 .button:hover::after,
 .button:focus::after,
 .button:focus::before {
-    background-color: var(--light);
+  background-color: var(--light);
 }
 
 
 
 
 @media (width <=1000px) {
-    .wrapper {
-        max-width: 80%;
-    }
+  .wrapper {
+    max-width: 80%;
+  }
 
-    .form {
-        display: flex;
-        flex-direction: column;
-    }
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
 }
