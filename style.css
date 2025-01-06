@@ -170,7 +170,7 @@ input:focus {
       var(--main),
       var(--secondary), var(--main));
   border-radius: 1.5rem;
-  animation: rotation 30s linear infinite;
+ /*  animation: rotation 15s linear infinite; */
 }
 
 .typewrapper::after {
