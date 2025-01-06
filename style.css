@@ -232,15 +232,13 @@ input:focus {
   border: solid .25rem var(--main);
   border-radius: 1rem;
   will-change: transform, opacity;
+  box-shadow: 0 0 0 300vw var(--backdrop);
 
 
 }
 
 .modal::backdrop {
-  background: var(--backdrop);
-  opacity: 0;
   backdrop-filter: blur(4px);
-  animation: fade-in 500ms forwards;
 }
 
 
@@ -257,7 +255,7 @@ input:focus {
 }
 
 .modal[closing]::backdrop {
-  animation: fade-out 500ms forwards;
+  backdrop-filter: initial;
 }
 
 
