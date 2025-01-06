@@ -73,11 +73,11 @@ body {
   margin-block-start: .5em;
   font-size: clamp(2rem, 1.4286rem + 2.2857vw, 3rem);
   font-weight: bold;
-  text-align: center;
   color: var(--dark);
 }
 
 .title-700 {
+  margin-block-start: .5em;
   font-size: clamp(1.5rem, 1.2143rem + 1.1429vw, 2rem);
   font-weight: bold;
   color: var(--dark);
@@ -86,8 +86,8 @@ body {
 }
 
 .title-500 {
-  font-size: clamp(1.125rem, 1.0536rem + 0.2857vw, 1.25rem);
   margin-block-start: 1em;
+  font-size: clamp(1.125rem, 1.0536rem + 0.2857vw, 1.25rem);
   text-wrap: balance;
   color: var(--dark);
 }
@@ -95,12 +95,21 @@ body {
 .body {
   color: var(--dark);
   font-size: clamp(1rem, 0.9286rem + 0.2857vw, 1.125rem);
-  margin-block-start: 1em;
+  margin-block-start: .5em;
+}
+:is(.intro, .how, .title-900){
+  text-align: center;
 }
 
 .center-txt {
   text-align: center;
 }
+.explanation{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
 
 .lab-input {
   letter-spacing: .15ch;
@@ -222,6 +231,7 @@ input:focus {
   margin: 2rem auto 0;
   border: solid .25rem var(--main);
   border-radius: 1rem;
+  will-change: transform, opacity;
 
 
 }
@@ -288,9 +298,18 @@ input:focus {
   .wrapper {
     max-width: 80%;
   }
+  :is(.intro, .how, .title-900){
+    text-align: initial;
+  }
+  
+  .explanation{
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
 
   .form {
     display: flex;
     flex-direction: column;
   }
+
 }

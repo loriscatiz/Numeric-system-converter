@@ -10,14 +10,61 @@
 
 <body>
     <div class="wrapper">
-        <header>
-            <h1 class="title-900">Numeric system converter</h1>
-            <p class="title-500 center-txt">Enter a number in any field (Decimal, Binary, Octal, or Hexadecimal) to see it
-                automatically converted to the other systems.
-                Use the + and - buttons to easily increase or decrease the value by 1.
-                Click the "i" icon next to a field to learn more about the corresponding numeric system.
-            </p>
-        </header>
+
+        <h1 class="title-900">Numeric system converter</h1>
+        <p class="body intro">Enter a number in any field (Decimal, Binary, Octal, or Hexadecimal) to see it
+            automatically converted to the other systems.
+            Use the + and - buttons to easily increase or decrease the value by 1.
+            Click the "i" icon next to a field to learn more about the corresponding numeric system.
+        </p>
+        <h2 class="title-700 how">How does this work?</h2>
+        <div class="explanation">
+            <div>
+                <h3 class="title-500">Converting to Decimal</h3>
+                <p class="body">
+                    To convert from Binary, Octal, or Hexadecimal to Decimal, multiply each digit by its base raised to
+                    the
+                    power of its position (starting from the right, beginning at 0).
+                </p>
+                <p class="body">
+                    <i>Example (Binary 1011 to Decimal):</i>
+                    (<code>1 × 2<sup>3</sup></code>) + (<code>0 × 2<sup>2</sup></code>) +
+                    (<code>1 × 2<sup>1</sup></code>) +
+                    (<code>1 × 2<sup>0</sup></code>) = <code>11</code>
+                </p>
+                <p class="body">
+                    <i>Hexadecimal Note:</i> Hexadecimal digits go from 0 to 9 and then use letters A to F to represent
+                    values 10 to 15. For example, the digit "A" in Hexadecimal is 10 in Decimal, "B" is 11, and so on
+                    until
+                    "F," which is 15. After "F," the next figure starts over (e.g., 10 in Hexadecimal is 16 in Decimal).
+                </p>
+            </div>
+            <div>
+                <h3 class="title-500">Converting from Decimal</h3>
+                <p class="body">
+                    To convert from Decimal to any base, repeatedly divide the Decimal number by the target base. Write
+                    down
+                    the remainders from bottom to top to get the final result.
+                </p>
+                <p class="body">
+                    <i>Example (Decimal 11 to Binary):</i><br>
+                    11 ÷ 2 = 5 R1<br>
+                    5 ÷ 2 = 2 R1<br>
+                    2 ÷ 2 = 1 R0<br>
+                    1 ÷ 2 = 0 R1<br>
+                    Result: <code>1011</code>
+                </p>
+                <p class="body">
+                    <i>Hexadecimal Example:</i><br>
+                    To convert Decimal 26 to Hexadecimal:<br>
+                    26 ÷ 16 = 1 R10 → "A"<br>
+                    1 ÷ 16 = 0 R1<br>
+                    Result: <code>1A</code>
+                </p>
+            </div>
+        </div>
+
+
         <div class="form">
 
             <div class="typewrapper decimal">
