@@ -52,6 +52,10 @@ let decimal = document.querySelector("#decimal");
 let binary = document.querySelector("#binary");
 let octal = document.querySelector("#octal");
 let hexadecimal = document.querySelector("#hexadecimal");
+let errorDecimal = document.querySelector('#error-decimal')
+let errorBinary = document.querySelector('#error-binary')
+let errorOctal = document.querySelector('#error-octal')
+let errorHexadecimal = document.querySelector('#error-hexadecimal')
 let previousDecimalValue = decimal.value
 let previousBinaryValue = binary.value
 let previousOctalValue = octal.value
@@ -62,6 +66,10 @@ function updateFromDecimal(){
     if(decimal.value==false){decimal.value = "0"}
     if (/^[0-9]*$/.test(decimal.value)) {
         // Se l'input è valido (solo 0 e 1)
+        errorDecimal.classList.remove('error-visible')
+        errorBinary.classList.remove('error-visible')
+        errorOctal.classList.remove('error-visible')
+        errorHexadecimal.classList.remove('error-visible')
         previousDecimalValue = decimal.value; // Aggiorna il valore valido precedente
         binary.value = decimalToBase(decimal.value, 2); // Aggiorna il campo decimale
         octal.value = decimalToBase(decimal.value, 8)
@@ -71,7 +79,11 @@ function updateFromDecimal(){
         previousHexadecimalValue = hexadecimal.value; // Aggiorna il valore valido precedente
     } else {
         // Se l'input è invalido
-        console.log("hai inserito " + decimal.value +" carattere non valido")
+        console.error("hai inserito " + decimal.value +" carattere non valido")
+        errorBinary.classList.remove('error-visible')
+        errorOctal.classList.remove('error-visible')
+        errorHexadecimal.classList.remove('error-visible')
+        errorDecimal.classList.add('error-visible')
         decimal.value = previousDecimalValue; // Ripristina il valore precedente
     }
 }
@@ -79,6 +91,10 @@ function updateFromBinary(){
     removeLeadingZero(binary)
     if(binary.value==false){binary.value = "0"}
     if (/^[01]*$/.test(binary.value)) {
+        errorDecimal.classList.remove('error-visible')
+        errorBinary.classList.remove('error-visible')
+        errorOctal.classList.remove('error-visible')
+        errorHexadecimal.classList.remove('error-visible')
         previousBinaryValue = binary.value; // Aggiorna il valore valido precedente
         decimal.value = baseToDecimal(binary.value, 2); // Aggiorna il campo decimale
         octal.value = decimalToBase(decimal.value, 8)
@@ -88,7 +104,11 @@ function updateFromBinary(){
         previousHexadecimalValue = hexadecimal.value;
     } else {
         // Se l'input è invalido
-        console.log("hai inserito " + binary.value +" carattere non valido")
+        console.error("hai inserito " + binary.value +" carattere non valido")
+        errorDecimal.classList.remove('error-visible')
+        errorOctal.classList.remove('error-visible')
+        errorHexadecimal.classList.remove('error-visible')
+        errorBinary.classList.add('error-visible')
         binary.value = previousBinaryValue; // Ripristina il valore precedente
     }
 }
@@ -96,6 +116,10 @@ function updateFromOctal(){
     removeLeadingZero(octal)
     if(octal.value==false){octal.value = "0"}
     if (/^[0-7]*$/.test(octal.value)) {
+        errorDecimal.classList.remove('error-visible')
+        errorBinary.classList.remove('error-visible')
+        errorOctal.classList.remove('error-visible')
+        errorHexadecimal.classList.remove('error-visible')
         previousOctalValue = octal.value; // Aggiorna il valore valido precedente
         decimal.value = baseToDecimal(octal.value, 8); // Aggiorna il campo decimale
         binary.value = decimalToBase(decimal.value, 2)
@@ -105,7 +129,11 @@ function updateFromOctal(){
         previousHexadecimalValue = hexadecimal.value;
     } else {
         // Se l'input è invalido
-        console.log("hai inserito " + octal.value +" carattere non valido")
+        console.error("hai inserito " + octal.value +" carattere non valido")
+        errorDecimal.classList.remove('error-visible')
+        errorBinary.classList.remove('error-visible')
+        errorHexadecimal.classList.remove('error-visible')
+        errorOctal.classList.add('error-visible')
         octal.value = previousOctalValue; // Ripristina il valore precedente
     }
 
@@ -115,6 +143,10 @@ function updateFromHexadecimal(){
         if(hexadecimal.value==false){hexadecimal.value = "0"}
         hexadecimal.value = hexadecimal.value.toUpperCase();
         if (/^[0-9A-F]*$/.test(hexadecimal.value)) {
+            errorDecimal.classList.remove('error-visible')
+            errorBinary.classList.remove('error-visible')
+            errorOctal.classList.remove('error-visible')
+            errorHexadecimal.classList.remove('error-visible')
             previousHexadecimalValue = hexadecimal.value; // Aggiorna il valore valido precedente
             decimal.value = baseToDecimal(hexadecimal.value, 16); // Aggiorna il campo decimale
             binary.value = decimalToBase(decimal.value, 2)
@@ -124,7 +156,11 @@ function updateFromHexadecimal(){
             previousOctalValue = octal.value;
         } else {
             // Se l'input è invalido
-            console.log("hai inserito " + hexadecimal.value +" carattere non valido")
+            console.error("hai inserito " + hexadecimal.value +" carattere non valido")
+            errorDecimal.classList.remove('error-visible')
+            errorBinary.classList.remove('error-visible')
+            errorOctal.classList.remove('error-visible')
+            errorHexadecimal.classList.add('error-visible')
             hexadecimal.value = previousHexadecimalValue; // Ripristina il valore precedente
         }
 }

@@ -121,6 +121,21 @@ body {
   color: var(--dark);
 }
 
+
+.error{
+  color: rgb(95, 11, 11);
+  background-color: rgb(236, 134, 134);
+  border: solid 1px;
+  border-radius: .75em;
+  visibility: hidden;
+  text-align: center;
+  padding: .5em 1em;
+  margin-block: -1rem;
+}
+.error-visible{
+  visibility: visible;
+}
+
 input {
   text-align: center;
   outline: solid 2px var(--main);
