@@ -79,7 +79,10 @@ function updateFromDecimal(){
         previousHexadecimalValue = hexadecimal.value; // Aggiorna il valore valido precedente
     } else {
         // Se l'input è invalido
-        console.error("hai inserito " + decimal.value +" carattere non valido")
+        console.error(
+            `${decimal.value} is not a valid decimal number. A decimal number consists of digits [0-9].`
+          );
+          
         errorBinary.classList.remove('error-visible')
         errorOctal.classList.remove('error-visible')
         errorHexadecimal.classList.remove('error-visible')
@@ -104,7 +107,9 @@ function updateFromBinary(){
         previousHexadecimalValue = hexadecimal.value;
     } else {
         // Se l'input è invalido
-        console.error("hai inserito " + binary.value +" carattere non valido")
+        console.error(
+            `${binary.value} is not a valid binary number. A binary number consists of only the digits [0] and [1].`
+          );          
         errorDecimal.classList.remove('error-visible')
         errorOctal.classList.remove('error-visible')
         errorHexadecimal.classList.remove('error-visible')
@@ -127,9 +132,9 @@ function updateFromOctal(){
         previousDecimalValue = decimal.value; // Aggiorna il valore valido precedente
         previousBinaryValue = binary.value; // Aggiorna il valore valido precedente
         previousHexadecimalValue = hexadecimal.value;
-    } else {
-        // Se l'input è invalido
-        console.error("hai inserito " + octal.value +" carattere non valido")
+    } else {console.error(
+        `${octal.value} is not a valid octal number. An octal number consists of digits [0-7].`
+      );      
         errorDecimal.classList.remove('error-visible')
         errorBinary.classList.remove('error-visible')
         errorHexadecimal.classList.remove('error-visible')
@@ -156,7 +161,9 @@ function updateFromHexadecimal(){
             previousOctalValue = octal.value;
         } else {
             // Se l'input è invalido
-            console.error("hai inserito " + hexadecimal.value +" carattere non valido")
+            console.error(
+                `${hexadecimal.value} is not a valid hexadecimal number. A hexadecimal number consists of digits [0-9] and letters [A-F].`
+              );              
             errorDecimal.classList.remove('error-visible')
             errorBinary.classList.remove('error-visible')
             errorOctal.classList.remove('error-visible')
