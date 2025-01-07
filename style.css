@@ -181,26 +181,15 @@ input:focus {
   position: absolute;
   inset: -0.5rem;
   z-index: -1;
-  background: conic-gradient(from var(--gradient-angle),
+  background: conic-gradient(from -120deg,
       var(--main),
       var(--secondary), var(--main));
   border-radius: 1.5rem;
- /*  animation: rotation 15s linear infinite; */
 }
 
 .typewrapper::after {
   filter: blur(4rem);
   opacity: .5;
-}
-
-@keyframes rotation {
-  0% {
-    --gradient-angle: 0deg;
-  }
-
-  100% {
-    --gradient-angle: 360deg;
-  }
 }
 
 .buttons-wrapper {
