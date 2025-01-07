@@ -62,6 +62,8 @@ let previousOctalValue = octal.value
 let previousHexadecimalValue = hexadecimal.value
 
 function updateFromDecimal(){
+    const cursorPosition = decimal.selectionStart; // Save the cursor position
+    const originalLength = decimal.value.length;  // Save the original length
     removeLeadingZero(decimal)
     if(decimal.value==false){decimal.value = "0"}
     if (/^[0-9]*$/.test(decimal.value)) {
@@ -89,8 +91,16 @@ function updateFromDecimal(){
         errorDecimal.classList.add('error-visible')
         decimal.value = previousDecimalValue; // Ripristina il valore precedente
     }
+          // Restore the cursor position
+          const newLength = decimal.value.length;  // Get the updated length
+          const lengthChange = newLength - originalLength; // Calculate the length change
+          const newCursorPosition = cursorPosition + lengthChange; // Adjust cursor position
+          decimal.setSelectionRange(newCursorPosition, newCursorPosition);
 }
 function updateFromBinary(){
+    const cursorPosition = binary.selectionStart; // Save the cursor position
+    const originalLength = binary.value.length;  // Save the original length
+
     removeLeadingZero(binary)
     if(binary.value==false){binary.value = "0"}
     if (/^[01]*$/.test(binary.value)) {
@@ -116,8 +126,15 @@ function updateFromBinary(){
         errorBinary.classList.add('error-visible')
         binary.value = previousBinaryValue; // Ripristina il valore precedente
     }
+      // Restore the cursor position
+      const newLength = binary.value.length;  // Get the updated length
+      const lengthChange = newLength - originalLength; // Calculate the length change
+      const newCursorPosition = cursorPosition + lengthChange; // Adjust cursor position
+      binary.setSelectionRange(newCursorPosition, newCursorPosition);
 }
 function updateFromOctal(){
+    const cursorPosition = octal.selectionStart; // Save the cursor position
+    const originalLength = octal.value.length;  // Save the original length
     removeLeadingZero(octal)
     if(octal.value==false){octal.value = "0"}
     if (/^[0-7]*$/.test(octal.value)) {
@@ -141,9 +158,15 @@ function updateFromOctal(){
         errorOctal.classList.add('error-visible')
         octal.value = previousOctalValue; // Ripristina il valore precedente
     }
+    const newLength = octal.value.length;  // Get the updated length
+    const lengthChange = newLength - originalLength; // Calculate the length change
+    const newCursorPosition = cursorPosition + lengthChange; // Adjust cursor position
+    octal.setSelectionRange(newCursorPosition, newCursorPosition);
 
 }
 function updateFromHexadecimal(){
+    const cursorPosition = hexadecimal.selectionStart; // Save the cursor position
+    const originalLength = hexadecimal.value.length;  // Save the original length
     removeLeadingZero(hexadecimal)
         if(hexadecimal.value==false){hexadecimal.value = "0"}
         hexadecimal.value = hexadecimal.value.toUpperCase();
@@ -170,6 +193,10 @@ function updateFromHexadecimal(){
             errorHexadecimal.classList.add('error-visible')
             hexadecimal.value = previousHexadecimalValue; // Ripristina il valore precedente
         }
+        const newLength = hexadecimal.value.length;  // Get the updated length
+        const lengthChange = newLength - originalLength; // Calculate the length change
+        const newCursorPosition = cursorPosition + lengthChange; // Adjust cursor position
+        hexadecimal.setSelectionRange(newCursorPosition, newCursorPosition);
 }
 
 decimal.addEventListener("input", updateFromDecimal)
