@@ -7,8 +7,12 @@ This very simple web application allows users to input numbers in any of the fol
 * Automatic corrections: removes invalid leading zeros and ensures consistent formatting.
 * Modals: Each numeric system has an info button that opens a modal, providing detailed information about its usage and characteristics."
 * Modular design: the code is structured to handle extensions and improvements easily.
-## Upcoming Updates
-* Screenshots and Video Demos: I'll update this README with visuals showing the application in action.
+
+  ![numeric-system-converter-0](https://github.com/user-attachments/assets/4dc949ff-e968-479d-8baf-7e4b97580137)
+![numeric-system-converter-1](https://github.com/user-attachments/assets/d2aaf69d-4466-4f91-8c9e-fb190ebcd1e1)
+
+## Demo
+[Live demo](http://numeric-system-converter.netlify.app/)
 
 Stay tuned for more updates and enhancements!
 
