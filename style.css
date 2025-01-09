@@ -231,6 +231,7 @@ input:focus {
 }
 
 .modal {
+  background-color: var(--light);
   max-width: min(90%, 750px);
   margin: 2rem auto 0;
   border: solid .25rem var(--main);
