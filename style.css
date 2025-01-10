@@ -201,6 +201,7 @@ input:focus {
   cursor: pointer;
   height: 3rem;
   width: 3rem;
+  padding: 0;
   border: solid 2px var(--main);
   border-radius: 50%;
   position: relative;
