@@ -181,7 +181,7 @@ input:focus {
   position: absolute;
   inset: -0.5rem;
   z-index: -1;
-  background: conic-gradient(from -120deg,
+  background: conic-gradient(from 120deg,
       var(--main),
       var(--secondary), var(--main));
   border-radius: 1.5rem;
@@ -200,15 +200,13 @@ input:focus {
 .button {
   cursor: pointer;
   height: 3rem;
-  aspect-ratio: 1;
+  width: 3rem;
   border: solid 2px var(--main);
   border-radius: 50%;
   position: relative;
   background-color: var(--light);
   transition: all var(--transition-duration);
   color: var(--main);
-  line-height: 1em;
-
 }
 
 .button:hover,
@@ -226,7 +224,7 @@ input:focus {
   top: 1rem;
   right: 1rem;
   height: 2rem;
-  aspect-ratio: 1;
+  width: 2rem;
   border-radius: 50%;
 }
 
